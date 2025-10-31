@@ -2,13 +2,11 @@ os: linux
 language: java
 services:
   - docker
-cache: bundler
-dist: focal
-install: skip
-
-cache:
+cache: 
   directories:
     - $HOME/.m2
+dist: focal
+install: skip
 
 stages:
   - name: test
