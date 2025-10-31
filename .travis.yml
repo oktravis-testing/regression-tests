@@ -2,20 +2,23 @@ os: linux
 language: java
 services:
   - docker
-cache: 
-  directories:
-    - $HOME/.m2
+cache: bundler
 dist: focal
 install: skip
 
 stages:
   - name: test
+  - name: deploy
 
 jobs:
   include:
     - stage: test
       name: testing
       script: true
+
+    - stage: deploy
+      name: deploy
+      script: echo "Deploying..."
 
 after_success:
   - echo passed
