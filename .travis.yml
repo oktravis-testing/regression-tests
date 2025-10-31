@@ -6,6 +6,10 @@ cache: bundler
 dist: focal
 install: skip
 
+cache:
+  directories:
+    - $HOME/.m2
+
 stages:
   - name: test
 
